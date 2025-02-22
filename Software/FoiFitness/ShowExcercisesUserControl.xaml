@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="FoiFitness.ShowExcercisesUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FoiFitness"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+
+
+    <StackPanel>
+        <ItemsControl x:Name="lbAllExcercises" ItemsSource="{Binding allExcercises}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Background="#252D68" Margin="25,25,25,0">
+                        <Image x:Name="imgExcercise" Margin="20" DockPanel.Dock="Left" Source="{Binding image}" MaxHeight="150" MaxWidth="150" Stretch="UniformToFill" MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+                        <StackPanel Margin="20" DockPanel.Dock="Right" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                            <TextBlock Margin="0,0,0,20" Background="Transparent" Foreground="White" Text="{Binding name}" FontWeight="Bold" FontSize="30"/>
+                            <TextBlock Margin="0,0,0,20" Background="Transparent" Foreground="White" TextWrapping="WrapWithOverflow" Text="{Binding description}" Padding="0,10,0,10" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            <Button Tag="{Binding id}" x:Name="btnShowExcerciseInfo" Background="#0B23D1" Foreground="White" BorderThickness="0" BorderBrush="Transparent" Content="Select" Width="150" FontSize="18" Padding="0,5,0,5"  HorizontalAlignment="Right" Click="btnShowExcerciseInfo_Click"/>
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

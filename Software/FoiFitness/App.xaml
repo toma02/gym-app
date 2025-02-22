@@ -1,0 +1,9 @@
+﻿<Application x:Class="FoiFitness.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FoiFitness.constants"
+             StartupUri="AuthWindow.xaml">
+    <Application.Resources>
+
+    </Application.Resources>
+</Application>

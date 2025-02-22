@@ -1,0 +1,42 @@
+﻿<Window x:Class="FoiFitness.IdealWieghtCalculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoiFitness"
+        mc:Ignorable="d"
+        Title="IdealWieghtCalculator" Height="300" Width="500" Background="#131944">
+    <Grid HorizontalAlignment="Center" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Ideal weight calculator" Foreground="White" FontSize="35" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Gender" Foreground="white" FontSize="18"/>
+        <RadioButton x:Name="radioMale" GroupName="gender" Grid.Row="2" Grid.Column="1" Content="male" Foreground="white" FontSize="18"  VerticalAlignment="Center"/>
+        <RadioButton x:Name="radioFemale" GroupName="gender" Grid.Row="2" Grid.Column="2" Content="female" Foreground="white" FontSize="18" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Height" Foreground="white" FontSize="18" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtHeight" MinWidth="200" Padding="10" Margin="0,10,10,0"/>
+        <Label Grid.Row="3" Grid.Column="3" Content="cm" Foreground="white" FontSize="18" VerticalAlignment="Center"/>
+        <Label Grid.Row="3" Grid.Column="3" Content="cm" Foreground="white" FontSize="18" VerticalAlignment="Center"/>
+
+        <Button Grid.Row="4" Grid.Column="1" x:Name="btnCalculate" Content="Calculate" FontSize="18" VerticalAlignment="Center" Margin="10" Click="btnCalculate_Click"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="btnCancel" Content="Cancel" FontSize="18" VerticalAlignment="Center" Margin="10" Click="btnCancel_Click"/>
+
+        <Label Grid.Row="5" Grid.Column="1" Content="Your ideal weight:" Foreground="white" FontSize="18" VerticalAlignment="Center"/>
+        <Label Grid.Row="5" Grid.Column="2"  Foreground="white" FontSize="18" VerticalAlignment="Center" x:Name="lbIdealWeight"/>
+    </Grid>
+</Window>

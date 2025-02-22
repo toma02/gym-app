@@ -1,0 +1,42 @@
+﻿<Window x:Class="FoiFitness.CustomPlanProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoiFitness"
+        mc:Ignorable="d"
+        Title="Create your own plan" Height="600" Width="800" Loaded="Window_Loaded">
+    <DockPanel Background="#090C22">
+        <Grid HorizontalAlignment="Stretch" Background="#131944">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <Button x:Name="btnCreate" Content="Create training plan" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Height="35" Width="150" Click="btnCreate_Click" Margin="30,38,460,73"/>
+            <Button x:Name="btnCreateTraining" Content="Create training" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Height="35" Width="150" Click="btnCreateTraining_Click"  Margin="30,91,460,20"/>
+            <Button x:Name="btnCreateExercise" Content="Add exercise info" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Height="35" Width="150" Margin="218,91,0,20" HorizontalAlignment="Left" Click="btnCreateExercise_Click"/>
+            <Button x:Name="btnSendMail" Content="Send to mail" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Height="35" Width="150" Margin="425,91,0,20" HorizontalAlignment="Left" Click="btnSendMail_Click"/>
+
+            <Label Content="Choose a plan: " FontWeight="Bold" FontSize="15" Foreground="White" Height="35" Width="120" Margin="305,38,215,73"/>
+            <ComboBox x:Name="cmbChoosePlan" Height="35" Width="150" Margin="425,38,65,73" />
+
+            <Button x:Name="btnClose" Content="Cancel" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Height="35" Width="150" Margin="10,95,0,16" HorizontalAlignment="Left" Click="btnClose_Click" Grid.Column="1"/>
+
+
+            <StackPanel Grid.Row="1" Margin="10">
+                <ContentControl x:Name="cntCreate"/>
+            </StackPanel>
+        </Grid>
+
+
+
+    </DockPanel>
+</Window>

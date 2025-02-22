@@ -1,0 +1,13 @@
+﻿<Window x:Name="AuthWindow1" x:Class="FoiFitness.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoiFitness"
+        mc:Ignorable="d"
+        Title="Authentification" Height="450" Width="800" Loaded="AuthWindow1_Loaded">
+
+    <DockPanel Background="#090C22">
+        <ContentControl x:Name="cntControl" HorizontalAlignment="Center" Width="400"/>
+    </DockPanel>
+</Window>

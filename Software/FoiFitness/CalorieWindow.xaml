@@ -1,0 +1,56 @@
+﻿<Window x:Class="FoiFitness.CalorieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoiFitness"
+        mc:Ignorable="d"
+        Title="Calories" Height="400" Width="460" Loaded="Window_Loaded">
+    <Grid Background="#090C22">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#131944">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnCalories" Content="Calories" Margin="10 5 10 5" Width="100" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Click="btnCalories_Click"/>
+            <Button Grid.Column="1" x:Name="btnFoodStuff" Content="Foodstuff" Margin="10 5 10 5" Width="100" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Click="btnFoodStuff_Click"/>
+            <Button Grid.Column="2" x:Name="btnInsertFood" Content="Insert food" Margin="10 5 10 5" Width="100" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Click="btnInsertFood_Click"/>
+        </Grid>
+        <ContentControl Grid.Row="1" x:Name="cntShowCalories"/>
+        <Grid Grid.Row="2" VerticalAlignment="Center" Background="#131944">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Foreground="White" FontSize="16" Content="BMR calories" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="txtBmrCalories" Foreground="White" FontSize="16" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"/>
+            <Label Foreground="White" FontSize="16" Content="Calories" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="txtCalories" Foreground="White" FontSize="16" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"/>
+        </Grid>
+        <ItemsControl x:Name="lbAllDateExcercises" ItemsSource="{Binding allUserFood}" Grid.Row="3" Background="#131944">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <TextBlock Background="Transparent" Foreground="White" Text="{Binding Grocery.name}" Margin="0 0 10 5"/>
+                        <TextBlock Background="Transparent" Foreground="White" Text="{Binding gram_amount}" Margin="5 0 10 0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <StackPanel HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Center">
+            <Button x:Name="btnCancelCalories" Content="Cancel" Width="100" Background="#0B23D1" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0 0 20 0" Click="btnCancelCalories_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
